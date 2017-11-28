@@ -60,11 +60,24 @@ public class ThreadedSearch<T> implements Runnable {
 		
 	}
 	
-    return false;
+	for(int i = 0; i < numThreads; i++){
+		threads[i].join();
+	}
+	
+    return answer.getAnswer();
   }
-
+  
+  //Linear search, if we find target, set answer to true and break. (Or if answer is already true, break.)
   public void run() {
-
+	  for(int i = begin; i < end; i++){
+		  if(answer.getAnswer() == true){
+			  break;
+		  }
+		  else if(list.get(i).equals(target)){
+			  answer.setAnswer(true);
+			  break;
+		  }
+	  }
   }
 
   private class Answer {
