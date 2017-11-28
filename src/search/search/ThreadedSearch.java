@@ -53,6 +53,7 @@ public class ThreadedSearch<T> implements Runnable {
 	
 	int segment = list.size()/numThreads;
 	
+	//Create and start a bunch of threads
 	for(int i = 0; i < numThreads; i++){
 		threads[i] = new Thread(new ThreadedSearch(target, list, beginNew, beginNew + segment, answer));
 		threads[i].start();

@@ -26,11 +26,13 @@ public class Main {
     // You can replace ThreadedSearch with LinearSearch to see this work with
     // the given linear search code.
     ThreadedSearch<Integer> searcher=new ThreadedSearch<Integer>();
+    //LinearSearch<Integer> searcher1=new LinearSearch<Integer>();
     // This specifies 4 threads for the tests. It would be a good idea to play
     // with this and see how that changes things. Keep in mind that your number
     // of threads *may* need to evenly divide the length of the list being
     // searched (ARRAY_SIZE in this case).
     return searcher.parSearch(4, target, list);
+    //return searcher1.search(4, list);
   }
 
 }
